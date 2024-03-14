@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Stats</title>
+    <link rel="stylesheet" href="product-stats.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <button onclick="window.location.href = 'home.html'"> < Back to Products</button>
+        <h2>Product Stats</h2>
+        <div id="stats-content">
+            <div class="graph-container">
+                <h3>Sales Graph</h3>
+                <canvas id="salesGraph"></canvas>
+                <script>
+                    // Ensure the DOM is fully loaded
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const ctx = document.getElementById('salesGraph').getContext('2d');
+                        const salesGraph = new Chart(ctx, {
+                            type: 'line', // Example: line chart
+                            data: {
+                                labels: ['January', 'February', 'March', 'April'], // Example data
+                                datasets: [{
+                                    label: 'Sales',
+                                    data: [10, 20, 30, 40], // Example data points
+                                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                    borderColor: 'rgba(54, 162, 235, 1)',
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    });
+                </script>                
+            </div>  
+
+            <div class="details-container">
+                <h3>Product Details</h3>
+                <p id="product-details">Product details will be displayed here...</p>
+            </div>
+            <div class="sales-data-container">
+                <h3>Sales Data</h3>
+                <p id="sales-data">Sales data will be displayed here...</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="stats-section">
+        <h2>Product General Stats</h2>
+        <div id="stats" class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Products</h3>
+                <p id="total-products">50</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Sales</h3>
+                <p id="total-sales">$5,000</p>
+            </div>
+            <div class="stat-card">
+                <h3>Top Product</h3>
+                <p id="top-product">Product XYZ</p>
+            </div>
+        </div>
+    </div>    
+    <div class="container">
+        <div class="title-with-button">
+            <h2>Products</h2>
+            <div class="plus-icon" onclick="toggleAddProductModal()">Add product +</div>
+        </div>
+        <div id="product-list-section">
+            <ul id="product-list"></ul>
+        </div>
+        <button onclick="window.location='settings.html'">Go to Settings</button>
+    </div>
+    <script src="script.js"></script>
+    <!-- Add to index.html inside <body>, after existing content -->
+    <div id="add-product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="toggleAddProductModal()">&times;</span>
+            <h2>Add Product</h2>
+            <input type="text" id="product-id-modal" placeholder="Enter Product ID">
+            <button onclick="addProduct()">Add Product</button>
+        </div>
+    </div>
+</body>
+</html>
